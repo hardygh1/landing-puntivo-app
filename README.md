@@ -3,6 +3,7 @@
 Landing de una sola página para **Puntivo POS** (app Android de ventas e inventario para bodegas en Perú).
 Next.js 15 (App Router) + React 19 + TypeScript + Tailwind CSS 4, exportada como sitio **100 % estático** (`out/`).
 
+
 ```bash
 npm install
 npm run dev      # http://localhost:3000
