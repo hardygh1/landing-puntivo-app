@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #2b3bff;
+  --color-brand-dark: #1f2bd6;
+  --color-brand-light: #4f5bff;
+  --color-accent: #00e676;
+  --color-navy: #0b1220;
+  --color-navy-2: #1a2380;
+  --color-yape: #742284;
+  --color-plin: #00b8e6;
+  --color-whatsapp: #16a34a;
+  --color-whatsapp-dark: #15803d;
+  --color-amber: #f59e0b;
+  --color-danger: #dc2626;
+  --color-surface: #f3f4f8;
+  --color-ink-soft: #3b4357;
+
+  --font-display: var(--font-montserrat), "Poppins", system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-hand: var(--font-caveat), "Comic Sans MS", cursive;
+
+  --shadow-soft: 0 10px 30px -12px rgb(11 18 32 / 0.18);
+  --shadow-accent: 0 12px 28px -10px rgb(0 230 118 / 0.65);
+  --shadow-wa: 0 12px 28px -10px rgb(22 163 74 / 0.6);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-white font-sans text-navy antialiased;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  @media (min-width: 768px) {
+    body {
+      font-size: 18px;
+    }
+  }
+  /* El header sticky no debe tapar los títulos al saltar a un ancla */
+  section[id],
+  [id="guia-instalacion"] {
+    scroll-margin-top: 72px;
+  }
+  /* Foco visible sobre fondos claros (contorno navy) y oscuros (halo verde) */
+  a:focus-visible,
+  button:focus-visible,
+  summary:focus-visible,
+  video:focus-visible {
+    outline: 3px solid var(--color-navy);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 7px var(--color-accent);
+  }
+}
+
+@utility bg-hero {
+  background-image:
+    radial-gradient(circle at 80% 10%, rgb(255 255 255 / 0.18), transparent 45%),
+    linear-gradient(135deg, #1f2bd6 0%, #2b3bff 45%, #4f5bff 100%);
+}
+
+@utility bg-night {
+  background-image:
+    radial-gradient(circle at 85% 0%, rgb(79 91 255 / 0.35), transparent 50%),
+    linear-gradient(135deg, #0b1220 0%, #1a2380 100%);
+}
+
+/* Pastilla de énfasis tipo plumón */
+@utility pill {
+  display: inline-block;
+  padding: 0 0.3em 0.06em;
+  border-radius: 1rem;
+  transform: rotate(-2deg);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  line-height: 1.12;
+}
+
+/* ===== Animaciones (solo CSS) ===== */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
+  }
+  .js [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .squiggle-beat {
+    animation: beat 2.4s ease-in-out infinite;
+    transform-origin: left center;
+  }
+  .pulse-ring {
+    animation: pulse-ring 4s ease-out infinite;
+  }
+}
+
+@keyframes beat {
+  0%,
+  70%,
+  100% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(1.18);
+  }
+}
+
+@keyframes pulse-ring {
+  0%,
+  75% {
+    box-shadow: 0 0 0 0 rgb(0 230 118 / 0.55);
+  }
+  100% {
+    box-shadow: 0 0 0 14px rgb(0 230 118 / 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== Variantes A/B del H1 (sin JS de terceros) =====
+   El <html> lleva data-hv="a|b|c"; un script inline lo ajusta con ?v= antes de pintar. */
+.hv {
+  display: none;
+}
+html[data-hv="a"] .hv-a,
+html[data-hv="b"] .hv-b,
+html[data-hv="c"] .hv-c {
+  display: inline;
+}
+
+/* ===== Aviso para escritorio (no Android), decidido antes de pintar ===== */
+.desktop-hint {
+  display: none;
+}
+html.not-android .desktop-hint {
+  display: flex;
+}
+
+/* ===== Acordeón <details> ===== */
+details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .chev {
+  transform: rotate(180deg);
+}
+
+/* QR generado en build */
+.qr svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Rendimiento: el navegador no calcula estilos/layout de secciones fuera de pantalla hasta acercarse */
+main > section:not(#descargar):not([aria-label]),
+footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1100px;
+}
