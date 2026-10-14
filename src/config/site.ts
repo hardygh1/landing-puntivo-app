@@ -22,7 +22,7 @@ export type LocalBusinessData = {
 export const site = {
   name: "Puntivo POS",
   shortName: "Puntivo",
-  siteUrl: "https://puntivo.pe", // ⚠️ COMPLETAR: dominio final, sin "/" al final
+  siteUrl: "https://puntivoperu.com", // dominio final, sin "/" al final
   locale: "es_PE",
   lang: "es-PE",
   tagline: "Convierte tu celular en un punto de venta",

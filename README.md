@@ -114,7 +114,7 @@ Las variables se leen en el build: después de cambiarlas, vuelve a construir.
 
 Tres variantes en `src/content/copy.ts` (`heroHeadlines`). Por defecto se usa `site.heroVariant`; para forzar otra usa `?v=b` o `?v=c`
 en el enlace (se recuerda durante la sesión). Se aplica antes de pintar, sin parpadeo ni JS de terceros. Combínalo con UTM:
-`https://puntivo.pe/?v=b&utm_source=tiktok&utm_campaign=lanzamiento&utm_content=video-yape`.
+`https://puntivoperu.com/?v=b&utm_source=tiktok&utm_campaign=lanzamiento&utm_content=video-yape`.
 
 ## 7. Despliegue
 
