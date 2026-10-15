@@ -62,8 +62,9 @@ export function Footer() {
             Hecho en Perú <span aria-hidden="true">🇵🇪</span>
           </p>
           <p className="mt-3">
-            © {year} {site.name}
+            © {year} {site.owner}. Todos los derechos reservados.
           </p>
+          <p className="mt-1">{site.name} es un producto de {site.owner}.</p>
           <p className="mt-1">Versión de la demo v{site.demoApk.version}</p>
         </div>
       </div>

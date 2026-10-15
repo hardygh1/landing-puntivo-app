@@ -22,6 +22,7 @@ export type LocalBusinessData = {
 export const site = {
   name: "Puntivo POS",
   shortName: "Puntivo",
+  owner: "Leva IA", // titular que aparece en el © del pie de página
   siteUrl: "https://puntivoperu.com", // dominio final, sin "/" al final
   locale: "es_PE",
   lang: "es-PE",
