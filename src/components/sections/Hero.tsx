@@ -1,7 +1,7 @@
 import { site } from "@/config/site";
 import { heroHeadlines } from "@/content/copy";
 import { Highlight } from "@/components/ui/Highlight";
-import { AppScreen } from "@/components/ui/AppScreen";
+import { SaleSimulation } from "@/components/ui/SaleSimulation";
 import { DownloadDemoButton } from "@/components/cta/DownloadDemoButton";
 import { WhatsAppButton } from "@/components/cta/WhatsAppButton";
 import { DesktopHint } from "@/components/cta/DesktopHint";
@@ -50,12 +50,7 @@ export function Hero() {
 
         <div className="relative mx-auto w-full max-w-[270px] md:max-w-[310px]">
           <Squiggles className="absolute -top-6 -right-8 size-14 text-accent" />
-          <AppScreen
-            name="venta"
-            priority
-            sizes="(min-width: 768px) 310px, 270px"
-            alt="Pantalla de Venta de Puntivo POS escaneando un código de barras con la cámara, con 2 productos en el carrito y total de S/ 41.50"
-          />
+          <SaleSimulation />
           <BrushRibbon className="relative -mt-14 -ml-8 md:-ml-24">Ideal para bodegas y minimarkets</BrushRibbon>
         </div>
       </div>
