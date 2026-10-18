@@ -101,6 +101,13 @@
     animation: pulse-ring 4s ease-out infinite;
   }
 
+  /* Botón flotante de WhatsApp */
+  .wa-float {
+    animation:
+      wa-float 3.2s ease-in-out infinite,
+      pulse-ring 4s ease-out infinite;
+  }
+
   /* Simulación de venta del hero */
   .sim-laser {
     animation: sim-laser 1.6s ease-in-out infinite alternate;
@@ -117,6 +124,16 @@
   .sim-draw {
     stroke-dasharray: 24;
     animation: sim-draw 0.5s 0.25s ease-out both;
+  }
+}
+
+@keyframes wa-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
   }
 }
 
