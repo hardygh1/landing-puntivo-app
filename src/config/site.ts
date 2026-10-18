@@ -34,8 +34,13 @@ export const site = {
   heroVariant: "a" as HeroVariant,
 
   whatsapp: {
-    number: "51933227824", // sin "+", sin espacios (formato wa.me)
+    number: "51933227824", // principal: se usa en el HTML inicial y en el JSON-LD. Sin "+", sin espacios (formato wa.me)
     display: "+51 933 227 824",
+    // Los botones reparten los chats al azar entre estos números (uno fijo por visitante).
+    numbers: [
+      { number: "51933227824", display: "+51 933 227 824" },
+      { number: "51954188017", display: "+51 954 188 017" },
+    ],
     messages: {
       compra: "Hola, quiero la app Puntivo POS para mi negocio.",
       demoAyuda: "Hola, descargué la demo de Puntivo POS y necesito ayuda para instalarla.",

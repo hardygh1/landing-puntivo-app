@@ -24,7 +24,7 @@ export function Footer() {
             className="mt-5 inline-flex min-h-12 items-center gap-2 rounded-full bg-white/10 px-4 font-bold hover:bg-white/15"
           >
             <WhatsAppIcon className="size-5 text-accent" />
-            {site.whatsapp.display}
+            <span data-wa-display>{site.whatsapp.display}</span>
           </a>
           {socials.length > 0 && (
             <ul className="mt-4 flex flex-wrap gap-2">

@@ -11,6 +11,7 @@ import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { Footer } from "@/components/sections/Footer";
 import { StickyCtaBar } from "@/components/cta/StickyCtaBar";
+import { WhatsAppFloat } from "@/components/cta/WhatsAppFloat";
 import { DownloadToast } from "@/components/cta/DownloadToast";
 import { ClientEffects } from "@/components/ClientEffects";
 
@@ -40,6 +41,7 @@ export default function Home() {
       </main>
       <Footer />
       <StickyCtaBar />
+      <WhatsAppFloat />
       <DownloadToast />
       <ClientEffects />
     </>
